@@ -25,5 +25,5 @@ Keyword Demo
 
 *** Keywords ***
 Tell "${person}" Hello
-    [Arguments]    ${mmy_loglevel}=INFO
-    Log    Hello ${person}    level=${mmy_loglevel}
+    [Arguments]    ${my_loglevel}=INFO
+    Log    Hello ${person}    level=${my_loglevel}
