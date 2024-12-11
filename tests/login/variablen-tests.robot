@@ -1,37 +1,37 @@
 *** Settings ***
-Test Tags       variablen
-Default Tags    variablen spaß
+Test Tags       variables
+Default Tags    variables fun
 
 
 *** Variables ***
-@{TIERE}            hund    katze    maus
-&{NEUE_KOLLEGEN}    person1=timo    person2=achim    person3=markus
+@{ANIMALS}          dog    cat    mouse
+&{NEW_COLLEAGUES}   person1=timo    person2=achim    person3=markus
 
 
 *** Test Cases ***
-Tiere ausgeben als Skalar (So nicht machen!)
-    FOR    ${tier}    IN    ${TIERE}
-        Log To Console    ${tier}
+Output Animals as Scalar (Don't do it this way!)
+    FOR    ${animal}    IN    ${ANIMALS}
+        Log To Console    ${animal}
     END
 
-Tiere ausgeben als Liste
-    Log Viel Auf Konsole    björn    achim    timo    jürgen    niklas    elias    noaman    schulungstag=Mittwoch
+Output Animals as a List
+    Log Many To Console    björn    achim    timo    jürgen    niklas    elias    noaman    training_day=Wednesday
 
-Kollegen ausgeben
-    Log To Console    ${NEUE_KOLLEGEN}
-    Log To Console    ${NEUE_KOLLEGEN}[person1]
-    VAR    @{ZAHLEN}    1    2    3
-    Log    ${ZAHLEN}
+Output Colleagues
+    Log To Console    ${NEW_COLLEAGUES}
+    Log To Console    ${NEW_COLLEAGUES}[person1]
+    VAR    @{NUMBERS}    1    2    3
+    Log    ${NUMBERS}
 
-Demonistriere IF Bedingung
-    VAR    ${zahl}    ${1}
-    IF    $zahl<2    Log To Console    Markus ist neu
+Demonstrate IF Condition
+    VAR    ${number}    ${1}
+    IF    ${number}<2    Log To Console    Markus is new
 
 
 *** Keywords ***
-Log Viel Auf Konsole
-    [Arguments]    @{log_elemente}    ${schulungstag}
-    Log To Console    ${log_elemente}
-    FOR    ${el}    IN    @{log_elemente}
+Log Many To Console
+    [Arguments]    @{log_elements}    ${training_day}
+    Log To Console    ${log_elements}
+    FOR    ${el}    IN    @{log_elements}
         Log To Console    ${el}
     END

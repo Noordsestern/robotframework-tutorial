@@ -8,33 +8,33 @@ ${BASE_URL}     https://seleniumbase.io/realworld
 
 
 *** Keywords ***
-Loginseite Öffnen
+Open Login Page
     New Page    ${BASE_URL}
 
-Signup-Seite Öffnen
+Open Signup Page
     New Browser    headless=no
-    New Page    ${BASE_URL}${/}signup
+    New Page    ${BASE_URL}/signup
 
-Fehlermeldung Für Ungültigen Benutzer Verifizieren
-    Fehlermeldung Verifizieren    Invalid Username!
+Verify Error Message For Invalid User
+    Verify Error Message    Invalid Username!
 
-Ungültigen Benutzer Einloggen
-    Benutzer Anmelden    Markus    12345    123456
+Attempt Invalid User Login
+    Log In User    Markus    12345    123456
 
-Login Daten Ermitteln
-    Signup-Seite Öffnen
-    ${username}    Username Auslesen
-    ${passwort}    Passwort Auslesen
-    ${totpcode}    MFA Code Auslesen
-    ${login_daten}    Create Dictionary    username=${username}    passwort=${passwort}    totpcode=${totpcode}
-    RETURN    ${login_daten}
+Retrieve Login Data
+    Open Signup Page
+    ${username}    Read Username
+    ${password}    Read Password
+    ${totpcode}    Read MFA Code
+    ${login_data}    Create Dictionary    username=${username}    password=${password}    totpcode=${totpcode}
+    RETURN    ${login_data}
 
-Username Auslesen
+Read Username
     RETURN    demo_user
 
-Passwort Auslesen
+Read Password
     RETURN    secret_pass
 
-MFA Code Auslesen
+Read MFA Code
     ${totpcode}    Get Text    id=totp
     RETURN    ${totpcode}

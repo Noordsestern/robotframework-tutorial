@@ -1,3 +1,3 @@
 *** Keywords ***
-"Hallo Welt" Sagen
+Say "Hallo Welt"
     Log To Console     Hallo Welt

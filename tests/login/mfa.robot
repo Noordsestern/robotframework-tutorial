@@ -12,14 +12,21 @@ ${BROWSER_HEADLESS}     ${False}
 
 
 *** Test Cases ***
-Login Mit Falschen Daten Soll Fehlschlagen
-    [Tags]    negativ-test
-    Loginseite Öffnen
-    Ungültigen Benutzer Einloggen
-    Fehlermeldung Für Ungültigen Benutzer Verifizieren
+Login With Invalid Data Should Fail
+    [Tags]    negative-test
+    Open Login Page
+    Attempt Invalid User Login
+    Verify Error Message For Invalid User
 
-Erfolgreichen Login Testen
-    ${login_daten}    Login Daten Ermitteln
-    Loginseite Öffnen
-    Benutzer Anmelden    ${login_daten}[username]    ${login_daten}[passwort]    totpcode=${login_daten}[totpcode]
+Test Successful Login
+    ${login_data}    Retrieve Login Data
+    Open Login Page
+    Log In User    ${login_data}[username]    ${login_data}[password]    totpcode=${login_data}[totpcode]
+    Welcome Page Should Be Visible
     Take Screenshot
+
+
+*** Keywords ***
+Welcome Page Should Be Visible
+    Get Element States    id=image1    *=    visible
+

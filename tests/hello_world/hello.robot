@@ -1,29 +1,29 @@
 *** Settings ***
-Documentation       Hallo dies ist docu
+Documentation       Documentation goes here
 
 Library             Collections
 Resource            hello-keywords.resource
 
 
 *** Variables ***
-${ZEICHENKETTE 1}       Hallo
-${ZEICHENKETTE 2}       Welt
+${STRING 1}          Hello
+${STRING 2}          World
 
 
 *** Test Cases ***
-2 Zeichenketten sollen identisch sein
-    [Documentation]    Das ist mein erster Testfall aus dem RF Training
-    # Dies ist mein erstes Keyword
-    Should Be Equal    ${zeichenkette 1}    ${zeichenkette 1}    msg=Die beiden Wörter sind nicht gleich.
+2 Strings Should Be Identical
+    [Documentation]    This is my first test case from the RF training
+    # This is my first keyword
+    Should Be Equal    ${STRING 1}    ${STRING 1}    msg=The two words are not the same.
 
-Demo Failing Testfall
-    Should Be Equal    ${zeichenkette 1}    ${zeichenkette 2}    msg=Die beiden Wörter sind nicht gleich.
+Demo Failing Test Case
+    Should Be Equal    ${STRING 1}    ${STRING 2}    msg=The two words are not the same.
 
 Keyword Demo
-    Sag "Björn" Hallo    mein_loglevel=WARN
+    Tell "Björn" Hello    my_loglevel=WARN
 
 
 *** Keywords ***
-Sag "${person}" Hallo
-    [Arguments]    ${mein_loglevel}=INFO
-    Log    Hallo ${person}    level=${mein_loglevel}
+Tell "${person}" Hello
+    [Arguments]    ${mmy_loglevel}=INFO
+    Log    Hello ${person}    level=${mmy_loglevel}

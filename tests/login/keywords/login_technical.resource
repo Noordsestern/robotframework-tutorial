@@ -3,25 +3,22 @@ Library     Browser
 
 
 *** Keywords ***
-Fehlermeldung Verifizieren
-    [Arguments]    ${expected_fehlermeldung}
-    ${fehlermeldung}    Get Text    id=top_message
-    Should Be Equal    ${fehlermeldung}    ${expected_fehlermeldung}
+Verify Error Message
+    [Arguments]    ${expected_error_message}
+    ${error_message}    Get Text    id=top_message
+    Should Be Equal    ${error_message}    ${expected_error_message}
 
-Benutzername Eingeben
+Enter Username
     [Arguments]    ${username}
     Fill Text    id=username    ${username}
 
-Passwort Eingeben
-    [Arguments]    ${passwort}
-    Fill Text    id=password    ${passwort}
+Enter Password
+    [Arguments]    ${password}
+    Fill Text    id=password    ${password}
 
-MFA Code Eingeben
+Enter MFA Code
     [Arguments]    ${totpcode}
     Fill Text    id=totpcode    ${totpcode}
 
-Login Button Klicken
+Click Login Button
     Click    id=log-in
-
-Browser Schließen
-    Close Browser
