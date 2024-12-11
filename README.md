@@ -1,5 +1,11 @@
 # Robot Framework Demonstration
 
+This project demonstrates
+
+1. Basic usage of keywords
+2. Basic implementaiton of Python keywords
+3. Web Automation with Browser (playwright based)
+4. Structure of keywords in business, functional and technical layer
 
 ## Installation
 
