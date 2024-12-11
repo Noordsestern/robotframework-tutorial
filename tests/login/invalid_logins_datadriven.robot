@@ -1,6 +1,6 @@
 *** Settings ***
 Library             Browser
-Library             DataDriver    file=invalid_logins.csv    reader_class=generic_csv_reader
+Library             DataDriver
 Resource            keywords/login_business.resource
 
 Suite Setup         New Browser    headless=${BROWSER_HEADLESS}

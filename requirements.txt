@@ -1,2 +1,3 @@
 robotframework>=7.1,<8
 robotframework-browser>=19,<20
+robotframework-datadriver

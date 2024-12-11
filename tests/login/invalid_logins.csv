@@ -1,4 +1,4 @@
-username;password;totpcode;fehlermeldung
+username;password;totpcode;error_message
 markus;12345;${TOTP};Invalid Username!
 demo_user;12345;${TOTP};Invalid Password!
 demo_user;secret_pass;${TOTP};Invalid MFA Code!
