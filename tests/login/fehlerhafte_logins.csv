@@ -1,0 +1,7 @@
+username;password;totpcode;fehlermeldung
+markus;12345;${TOTP};Invalid Username!
+demo_user;12345;${TOTP};Invalid Password!
+demo_user;secret_pass;${TOTP};Invalid MFA Code!
+${EMPTY};12345;${TOTP};The Username is Required!
+demo_user;${EMPTY};${TOTP};The Password is Required!
+demo_user;secret_pass;${EMPTY};The MFA Code is Required!

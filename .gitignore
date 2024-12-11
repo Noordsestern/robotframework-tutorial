@@ -1,0 +1,15 @@
+.conda/
+.venv/
+.vscode/
+results/
+logs/
+
+*.log
+*.zip
+*.pyc
+*.7z
+
+log.html
+report.html
+output.xml
+.pabotsuitenames
