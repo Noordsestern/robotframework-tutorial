@@ -22,3 +22,6 @@ Enter MFA Code
 
 Click Login Button
     Click    id=log-in
+
+Close All Contexts
+    Close Context    ALL
