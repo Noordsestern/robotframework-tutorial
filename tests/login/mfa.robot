@@ -1,14 +1,11 @@
 *** Settings ***
 Resource            keywords/login_business.resource
 
-Test Setup          New Browser    headless=${BROWSER_HEADLESS}
-Test Teardown       Close Browser
+Suite Setup          Open a new Browser
+Test Teardown        Close All Contexts
+Suite Teardown       Close Browser
 
 Test Tags           login    webui    smoke
-
-
-*** Variables ***
-${BROWSER_HEADLESS}     ${False}
 
 
 *** Test Cases ***

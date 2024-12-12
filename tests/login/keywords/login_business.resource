@@ -9,10 +9,11 @@ ${BASE_URL}     https://seleniumbase.io/realworld
 
 *** Keywords ***
 Open Login Page
+    New Context
     New Page    ${BASE_URL}
 
 Open Signup Page
-    New Browser    headless=no
+    New Context
     New Page    ${BASE_URL}/signup
 
 Verify Error Message For Invalid User
