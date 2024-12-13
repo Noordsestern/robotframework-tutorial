@@ -1,0 +1,11 @@
+debug-file = "console.log"
+console = "verbose"
+
+[variables]
+BROWSER_HEADLESS = "False"
+
+[profiles.production.variables]
+BROWSER_HEADLESS = "True"
+
+[profiles.dryrun]
+dry-run = true
